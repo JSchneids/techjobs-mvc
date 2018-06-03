@@ -37,6 +37,15 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+    // get the counter heading working!
+
+    <table th:fragment="jobs-listing" class="job-listing" th:each="job : ${jobs}">
+        <tr th:fragment="jobs-listing-nested" th:each="jobField : ${job}">
+            <td th:text="${#strings.capitalizeWords(jobField.key)}"></td>
+            <td th:text="${#strings.capitalizeWords(jobField.value)}"></td>
+        </tr>
+    </table>
+
 
 </div>
 
